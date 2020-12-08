@@ -1,0 +1,31 @@
+
+.wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+}
+.bottom {
+  background: #416044;
+  color: #fff;
+  padding: 0 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+/* sliding styles, added to bottom in the JS */
+.toggle {
+  overflow: hidden;
+  transition: height 0.5s, padding 0.5s;
+}
+.disappear {
+  height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* orange bar: View Country Facts */
+.clicker {
+  background: #A3D6A6;
+  margin: 1rem 0;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
