@@ -8,6 +8,7 @@
 	<title>Food Waste</title>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/chart.css">
 
 
 </head>
@@ -15,22 +16,135 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-	<h1>Food Waste in America</h1>
-	<p class="lead">
+
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="http://vovargas.com/">VOVARGAS Home</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	      <a class="nav-item nav-link active" href="index.html">Main<span class="sr-only">(current)</span></a>
+	      <a class="nav-item nav-link" href="recipe.html">Recipe</a>
+	      <a class="nav-item nav-link" href="compost.html">Composting</a>
+	    </div>
+	  </div>
+	</nav>
+
+
+
+<div class="card">
+	<h1 class="display-3">Food Waste in America</h1>
+	<p>
 The total generation of municpal solid waste in America in 2018 was 292.4 million tons, according to the <a href=https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/national-overview-facts-and-figures-materials#composting>EPA.</a>
 </p>
+<p>Food plays a major role in living sustainably. Each person has a different relationship with food, but everyone can make changes to their life to reduce their waste. This changes are not hard and often just mean making more conscious choices to their eating habits.</p>
+<p>Food spoilage is one of the biggest reasons Americans throw out food, with the main cause being the misunderstanding surrounding expiration labels.</p>
+<p>Food in the US is plentiful and cheap, which contributes to Americans not appreciating or valuing the food they consume compared to other cultures around the world.</p>
+<p>Americans are also impulsive in food purchases and often overestimate how much food they need, leading them to overbuy. This leads to more food spoiling and in turn, more food waste. </p>
+</div><!--card-->
 
-<p>Food spoilage is one of the biggest reasons Americans throw out food, with the main cause being the misunderstanding surrounding expiration labels.<br>
-Food in the US is plentiful and cheap, which contributes to Americans not appreciating or valuing the food they consume compared to other cultures around the world.<br>
-Americans are also impulsive in food purchases, and often overestimate how much food they need, leading them to overbuy. This leads to more food spoiling and in turn, more food waste. <br>
-Food decomposing in landfills produces a deadly greenhouse gas: methane. However, the impact does not begin here. Energy and resources are expended from the time the food is planted in the ground to traveling to when it's cooked in your kitchen and passes through your stomach.
-</p>
+<div class="card">
+<figure class="figure">
+
+<div id="container">	</div>
+
+<figcaption class="figure-caption">
+	 <p>The total generation of municipal solid waste (MSW) in 2018 was 588,800,000,000 pounds, or 292.4 million tons. That is 1,613,150,684 pounds per day or 806,575 tons.</p>
+	 <p>The generation rate of MSW was 4.9 pounds per person per day (1,788.5 pounds per year) in 2018. For a four-person household, that is 19.6 pounds per day and 7,154 pounds (3.5 tons) per year. Chart created with <a href="https://www.highcharts.com/">Highcharts.</a>
+	  </p></figcaption>
+</figure>
+</div><!--card-->
 
 
-<!--chart for household food waste-->
+<div class="card text-white bg-dark mb-3">
+	<div class="card-body">
+		<h4 class="card-header">Calculate your food waste score</h4>
+			<form id="myForm" action="form_processor.js" method="post">
+<div class="form-group">
+	<label>1. How many times per week do you eat out? This includes all food you eat that you do not already have at home.</label>
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="out" value="zero"> 0</label>
+	</div>
+	<!--form-check-->
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="out" value="one"> 1-2</label>
+	</div>
+	<!--form-check-->
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="out" value="two"> 3+</label>
+	</div>
+	<!--form-check-->
+</div>
+<!--group-->
+
+<div class="form-group">
+	<label>2. How many times per week do you throw out food into the garbage? (due to spoilage, mold, don't want) </label>
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="throw" value="zero"> 0</label>
+	</div>
+	<!--form-check-->
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="throw" value="zero"> 1-2</label>
+	</div>
+	<!--form-check-->
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="throw" value="three"> 3+</label>
+	</div>
+	<!--form-check-->
+</div>
+<!--group-->
+
+<div class="form-group">
+	<label>3. When food is about to spoil, what do you do? </label>
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="spoil" value="zero"> Cook and eat it</label>
+	</div>
+	<!--form-check-->
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="spoil" value="zero"> Freeze it</label>
+	</div>
+	<!--form-check-->
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="radio" name="spoil" value="two"> Throw Away
+		</label>
+	</div>
+	<!--form-check-->
+</div>
+<!--group-->
+<button class="btn btn-primary" type="submit">Get my score!</button>
+<button class="btn btn-secondary" type="reset">Start over</button>
+
+</form>
+
+<div class="card-text" id="showAnswers">
+</div>
+
+
+<div class="card-body">
+<p>Combine your points added to learn your waste score.</p>
+<h2 class="card-title">What your score means</h2>
+	<p>0 points: Your food waste is low! However, minimizing your waste goes beyond food. Ask yourself the other areas in your life that are prone to waste, like beauty supplies and clothing. Living sustainably is a life goal, not something achieved overnight.</p>
+	<p>1 point: Your waste is decently low, but everyone can take the steps to minimize their waste at any stage of their sustainability journey. Try the scrap stir fry below next time you find your fridge full of wilty veggies.</p>
+	<p>2+ points: Most Americans waste more than they think they do, so don't worry if your score is higher. There are an infinite amount of ways to begin to minimize your waste. Learn more about composting, one of the most effective ways to mitigate food waste, below.</p>
+</div>
+
+
+	</div><!--card-body-->
+</div><!--card-->
+
 <!--calculate food waste-->
-
-
+<p>
+</p>
 
 
 
@@ -43,13 +157,21 @@ Food decomposing in landfills produces a deadly greenhouse gas: methane. However
 		<div class="col-md-6">
 			<div class="card-body">
 				<p class="card-title display-4">Scrap Stir Fry</p>
-				<p class="card-text">It's the end of the week. You are way too tired and way too hungry to go grocery shopping. Your fridge is a sad scape, wilty spinach and broccoli teasing you. <br><b>Take those veggies you would otherwise throw away and throw them into this scrap stir fry!</b> <br>This vegetable meddley calls for absolutely whatever produce you already have, so no need to leave the house. It pairs perfect with a bowl of rice or some meat if you need additional protein.</p>
+				<p class="card-text h1">Take those veggies you would otherwise throw away and throw them into this scrap stir fry!<p>This vegetable meddley calls for absolutely whatever produce you already have, so no need to leave the house. It pairs perfect with a bowl of rice or some meat if you need additional protein.</p>
 				<a href="recipe.html" class="card-link">View the recipe</a>
 			</div><!--card-body-->
 		</div><!--col-->
 	</div><!--row-->
 </div><!--card-->
 
+<div class="lead"> <p>When food scraps enter landfills, they are deprived of the oxygen needed to safely decompose. Food decomposing in landfills produces a deadly greenhouse gas, methane. This gas enters the air.
+</p>
+<p>However, the impact does not begin here. Energy and resources are expended from the time the food is planted in the ground to traveling to when it's cooked in your kitchen and passes through your stomach.
+</p>
+<p>
+Making compost helps to reduce the amount of food waste entering landfills and in turn, reduces the release of methane and your carbon footprint. Composting is one of the most effective ways to mitigate food waste on the consumer level.
+</p>
+</div>
 
 <!--build a compost bin-->
 <div class="card mb-3" style="max-width: 6500px;">
@@ -60,21 +182,32 @@ Food decomposing in landfills produces a deadly greenhouse gas: methane. However
 		<div class="col-md-6">
 			<div class="card-body">
 				<p class="card-title display-4">Build a compost bin</p>
-				<p class="card-text"><p>When food scraps enter landfills, they are deprived of the oxygen needed to safely decompose. Instead, methane is released into the air.<br>
-Making compost helps to reduce the amount of food waste entering landfills and in turn, reduces the release of methane and your carbon footprint.<br>Composting is one of the most effective ways to mitigate your food waste. While most food scraps can be diverted from the trash bin, there are definitely items that shouldn't enter a home compost bin.
-</p>
-				<a href="compost.html" class="card-link">Learn what items should be in your compost</a>
+				<p class="card-text h1">
+				While most food scraps can be diverted from the trash bin, there are definitely items that should not enter your home compost.</p>
+				<a href="compost.html" class="card-link">Learn what items <b>should</b> be in your compost</a>
 			</div><!--card-body-->
 		</div><!--col-->
 	</div><!--row-->
 </div><!--card-->
-
+<footer>App created by Victoria Vargas for a Wep Apps class at the University of Florida. Photos by <a href="https://victoriaovargas.wordpress.com/portfolio-2/">Victoria Vargas.</a> Styled using Bootstrap <a href="https://bootswatch.com/lux/">LUX style.</a> </footer>
 
 
 </div> <!--col-->
 </div> <!--row-->
+
 </div><!--container-->
 
-<script src="js/main.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+<script src="js/chart.js"></script>
+<script src="js/quiz.js"></script>
+
 </body>
 </html>
